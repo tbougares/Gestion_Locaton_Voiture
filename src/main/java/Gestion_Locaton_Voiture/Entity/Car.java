@@ -2,6 +2,7 @@ package Gestion_Locaton_Voiture.Entity;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -92,7 +93,7 @@ public class Car extends AbstractClasse {
 		
 		//-----------------------------------------------
 		
-		@OneToOne()
+		@OneToOne(cascade = CascadeType.ALL)
 	    @JoinColumn(name = "photo_id", referencedColumnName = "id")
 	    private Photo photo;
 		

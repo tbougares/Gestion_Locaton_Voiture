@@ -5,14 +5,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.*;
 
-@Entity
 @Data
-@EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name="Address")
 @Embeddable
-public class Addresse extends AbstractClasse {
+public class Addresse  {
 	 @Column(name = "adresse1")
 	  private String adresse1;
 

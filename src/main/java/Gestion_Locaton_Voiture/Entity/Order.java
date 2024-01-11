@@ -20,11 +20,9 @@ public class Order extends AbstractClasse {
 	@Column(name = "country")
 	private String country;
 
-	@Enumerated(EnumType.STRING)
 	@Column(name = "BookingCity")
 	private String Booking_City;
 
-	@Enumerated(EnumType.STRING)
 	@Column(name = "ReturnCity")
 	private String Return_City;
 	
