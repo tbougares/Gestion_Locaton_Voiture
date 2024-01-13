@@ -1,7 +1,6 @@
 package Gestion_Locaton_Voiture.Entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
-import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.*;
 
