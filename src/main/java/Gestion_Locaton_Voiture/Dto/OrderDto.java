@@ -18,15 +18,15 @@ public class OrderDto {
 	
 	private String country;
 
-	private String Booking_City;
+	private String booking_City;
 
-	private String Return_City;
+	private String return_City;
 	
-	private Date Start_Date;
+	private Date start_Date;
 	
-	private Date End_Date;
+	private Date end_Date;
 	
-	private int Client_Age;
+	private int client_Age;
 	
 	
 	
@@ -42,13 +42,13 @@ public class OrderDto {
         return OrderDto.builder()
             .id(order.getId())
             .country(order.getCountry())
-            .Booking_City(order.getBooking_City())
-            .Return_City(order.getReturn_City())
+            .booking_City(order.getBooking_City())
+            .return_City(order.getReturn_City())
             .car(CarDto.fromEntity(order.getCar()))
-            .Client_Age(order.getClient_Age())
-            .End_Date(order.getEnd_Date())
+            .client_Age(order.getClient_Age())
+            .end_Date(order.getEnd_Date())
             .Order_Status(order.getOrder_Status())
-            .Start_Date(order.getStart_Date())
+            .start_Date(order.getStart_Date())
 
 
 

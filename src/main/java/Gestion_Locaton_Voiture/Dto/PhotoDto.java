@@ -15,14 +15,14 @@ public class PhotoDto {
 
 	private Integer id;
 	
-	private String Photo_1;
+	private String photo_1;
 	
 	
-	private String Photo_2;
+	private String photo_2;
 	
-	private String Photo_3;
+	private String photo_3;
 	
-	private String Photo_4;
+	private String photo_4;
 	
 	private CarDto car;
 	public static PhotoDto fromEntity(Photo photo) {
@@ -31,10 +31,10 @@ public class PhotoDto {
         }
         return PhotoDto.builder()
             .id(photo.getId())
-            .Photo_1(photo.getPhoto_1())
-            .Photo_2(photo.getPhoto_2())
-            .Photo_3(photo.getPhoto_3())
-            .Photo_4(photo.getPhoto_4())
+            .photo_1(photo.getPhoto_1())
+            .photo_2(photo.getPhoto_2())
+            .photo_3(photo.getPhoto_3())
+            .photo_4(photo.getPhoto_4())
             .build();
 
       }

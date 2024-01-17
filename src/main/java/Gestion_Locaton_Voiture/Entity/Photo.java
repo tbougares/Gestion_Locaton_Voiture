@@ -14,16 +14,16 @@ import lombok.*;
 public class Photo extends AbstractClasse {
 
 	@Column(name = "Photo1")
-	private String Photo_1;
+	private String photo_1;
 	
 	@Column(name = "Photo2")
-	private String Photo_2;
+	private String photo_2;
 	
 	@Column(name = "Photo3")
-	private String Photo_3;
+	private String photo_3;
 	
 	@Column(name = "Photo4")
-	private String Photo_4;
+	private String photo_4;
 	
 	@OneToOne(mappedBy = "photo")
     private Car car;

@@ -25,13 +25,17 @@ import lombok.*;
 public class User extends AbstractClasse {
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Column(name = "LastCheckIn")
-	private Date Last_CheckIn;
+	private Date last_CheckIn;
 	
 	@Column(name = "UserName")
-	private String UserName;
+	private String userName;
 	
 	@Column(name = "PassWord")
-	private String PassWord;
+	private String passWord;
+	
+	@Column(name="Email")
+	private String email;
+	
 	
 	@ManyToOne
     @JoinColumn(name="role_id", nullable=false)

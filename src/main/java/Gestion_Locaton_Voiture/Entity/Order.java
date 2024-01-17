@@ -21,21 +21,21 @@ public class Order extends AbstractClasse {
 	private String country;
 
 	@Column(name = "BookingCity")
-	private String Booking_City;
+	private String booking_City;
 
 	@Column(name = "ReturnCity")
-	private String Return_City;
+	private String return_City;
 	
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Column(name = "StartDate")
-	private Date Start_Date;
+	private Date start_Date;
 	
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Column(name = "EndDate")
-	private Date End_Date;
+	private Date end_Date;
 	
 	@Column(name = "ClientAge")
-	private int Client_Age;
+	private int client_Age;
 	
 	
 	

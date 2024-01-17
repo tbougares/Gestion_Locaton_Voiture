@@ -17,11 +17,11 @@ public class UserDto {
 	
 	private Integer id;
 	
-    private Date Last_CheckIn;
+    private Date last_CheckIn;
 	
-	private String UserName;
+	private String userName;
 	
-	private String PassWord;
+	private String passWord;
 	
     private RoleDto role;
 	
@@ -33,9 +33,9 @@ public class UserDto {
         }
         return UserDto.builder()
             .id(user.getId())
-            .Last_CheckIn(user.getLast_CheckIn())
-            .UserName(user.getUserName())
-            .PassWord(user.getPassWord())
+            .last_CheckIn(user.getLast_CheckIn())
+            .userName(user.getUserName())
+            .passWord(user.getPassWord())
             .role(RoleDto.fromEntity(user.getRole()))
             .build();
 

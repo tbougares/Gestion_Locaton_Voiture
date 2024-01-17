@@ -18,52 +18,43 @@ public class CarDto {
 
 	private Integer id;
 	
-	private String Name;
+	private String name;
 
 	private String brande;
 	
-	private String Matricule;
+	private String matricule;
 	
-	private Double Mileage;
+	private Double mileage;
 	
-	private int Model;
+	private int model;
 	
-	private int HorsPower;
+	private int horsPower;
 	
-	private Double Consumption;
+	private Double consumption;
 
 	private Fuel fuel;
 	
-	private Boolean Bluetooth;
+	private Boolean bluetooth;
 	
-	private Boolean AirBag;
+	private Boolean airBag;
 
 	private GearBox gearBox;
 	
-	private int Seat;
+	private int seat;
 	
-	private int Door;
+	private int door;
 
 	
 	private String style;
 	
-	private int Size_Cofer;
+	private int size_Cofer;
 	
-	private Double Price;
+	private Double price;
 	
-	private Double Rate;
+	private Double rate;
 	
 	//-------------------Assurence-------------------
-	
-	private Boolean CDM;
-	
-	private Boolean Protection_Vol;
-	
-	private Boolean Respo_Civile;
-
-
-	private Boolean Bris_Glace_Pneus;
-	
+		
 	//-----------------------------------------------
 	
     private PhotoDto photo;
@@ -76,32 +67,30 @@ public class CarDto {
         }
         return CarDto.builder()
             .id(car.getId())
-            .Name(car.getName())
+            .name(car.getName())
             .brande(car.getBrande())
-            .Matricule((car.getMatricule()))
-            .CDM(car.getCDM())
-            .Consumption(car.getConsumption())
-            .Mileage(car.getMileage())
-            .Model(car.getModel())
-            .HorsPower(car.getHorsPower())
-            .Door(car.getDoor())
-            .Bluetooth(car.getBluetooth())
-            .AirBag(car.getAirBag())
+            .matricule((car.getMatricule()))
+            
+            .consumption(car.getConsumption())
+            .mileage(car.getMileage())
+            .model(car.getModel())
+            .horsPower(car.getHorsPower())
+            .door(car.getDoor())
+            .bluetooth(car.getBluetooth())
+            .airBag(car.getAirBag())
             .fuel(car.getFuel())
-            .Size_Cofer(car.getSize_Cofer())
+            .size_Cofer(car.getSize_Cofer())
             .style(car.getStyle())
-            .Seat(car.getSeat())
-            .Price(car.getPrice())
+            .seat(car.getSeat())
+            .price(car.getPrice())
             .gearBox(car.getGearBox())
-            .Bris_Glace_Pneus(car.getBris_Glace_Pneus())
-            .Protection_Vol(car.getProtection_Vol())
-            .Respo_Civile(car.getRespo_Civile())
-            .Rate(car.getRate())
+            .rate(car.getRate())
             //.photo(car.getPhoto())
             //.(car.getModel())
             .build();
       }
 
+    
       public static Car toEntity(CarDto dto) {
         if (dto == null) {
           return null;
@@ -112,7 +101,7 @@ public class CarDto {
         car.setName(dto.getName());
         car.setBrande(dto.getBrande());
         car.setMatricule((dto.getMatricule()));
-        car.setCDM(dto.getCDM());
+        
         car.setConsumption(dto.getConsumption());
         car.setMileage(dto.getMileage());
         car.setModel(dto.getModel());
@@ -126,9 +115,6 @@ public class CarDto {
         car.setSeat(dto.getSeat());
         car.setPrice(dto.getPrice());
         car.setGearBox(dto.getGearBox());
-        car.setBris_Glace_Pneus(dto.getBris_Glace_Pneus());
-        car.setProtection_Vol(dto.getProtection_Vol());
-        car.setRespo_Civile(dto.getRespo_Civile());
         car.setRate(dto.getRate());
         return car;
       }

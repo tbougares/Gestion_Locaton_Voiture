@@ -19,7 +19,7 @@ public class RoleDto {
 	private Integer id;
 
 	
-	private String Name;
+	private String name;
 
 
     private List<UserDto> user;
@@ -30,7 +30,7 @@ public class RoleDto {
         }
         return RoleDto.builder()
             .id(role.getId())
-            .Name(role.getName())
+            .name(role.getName())
             .user(
             		role.getUser() != null ?
                             role.getUser().stream()

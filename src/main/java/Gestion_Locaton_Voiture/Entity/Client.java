@@ -20,30 +20,30 @@ import lombok.*;
 public class Client extends User {
 
 	@Column(name = "FirstName")
-	private String First_Name;
+	private String first_Name;
 	
 	@Column(name = "LastName")
-	private String Last_Name;
+	private String last_Name;
 
 	@Enumerated(EnumType.STRING)
 	@Column(name = "Gender")
 	private Gender gender;
 
 	@Column(name = "Age")
-	private int Age;
+	private int age;
 	
 	@Embedded
 	@Column(name = "Adress")
-	private Addresse Adress;
+	private Addresse adress;
 	
 	@Column(name = "Tel")
-	private String Tel;
+	private String tel;
 
 	@Column(name = "City")
-	private String City;
+	private String city;
 	
 	@Column(name = "Country")
-	private String Country;
+	private String country;
 	
 	@Column(name = "CIN")
 	private String CIN;
@@ -52,9 +52,9 @@ public class Client extends User {
 	
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Column(name = "DateCreation")
-	private Date Date_Creation;
+	private Date date_Creation;
 	
 	@Column(name = "Email")
-	private String Email;
+	private String email;
 	
 }

@@ -14,7 +14,7 @@ import lombok.*;
 @Table(name="Role")
 public class Role extends AbstractClasse {
 	@Column(name = "Name")
-	private String Name;
+	private String name;
 	
 	@OneToMany(mappedBy = "role")
     private List<User> user;

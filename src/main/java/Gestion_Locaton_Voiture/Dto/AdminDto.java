@@ -12,6 +12,6 @@ import lombok.NoArgsConstructor;
 public class AdminDto {
 	
 	private Integer id;
-	private String Full_Name;
+	private String full_Name;
 
 }

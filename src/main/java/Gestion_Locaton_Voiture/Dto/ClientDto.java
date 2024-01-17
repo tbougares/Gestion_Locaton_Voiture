@@ -17,48 +17,48 @@ public class ClientDto {
 
 	private Integer id;
 	
-	private String First_Name;
+	private String first_Name;
 	
-	private String Last_Name;
+	private String last_Name;
 
-	private Gender Gender;
+	private Gender gender;
 
-	private int Age;
+	private int age;
 	
-	private AddresDto Adress;
+	private AddresDto adress;
 	
-	private String Tel;
+	private String tel;
 
-	private String City;
+	private String city;
 	
-	private String Country;
+	private String country;
 	
 	private String CIN;
 	
 	
 	
-	private Date Date_Creation;
+	private Date date_Creation;
 	
 	
-	private String Email;
+	private String email;
 	 public static ClientDto fromEntity(Client client) {
 		    if (client == null) {
 		      return null;
 		    }
 		    return ClientDto.builder()
 		        .id(client.getId())
-		        .First_Name(client.getFirst_Name())
-		        .Last_Name(client.getLast_Name())
-		        .Gender(client.getGender())
+		        .first_Name(client.getFirst_Name())
+		        .last_Name(client.getLast_Name())
+		        .gender(client.getGender())
 
-		        .Adress(AddresDto.fromEntity(client.getAdress()))
-		        .Age(client.getAge())
+		        .adress(AddresDto.fromEntity(client.getAdress()))
+		        .age(client.getAge())
 		        .CIN(client.getCIN())
-		        .Date_Creation(client.getDate_Creation())
-		        .Email(client.getEmail())
-		        .Tel(client.getTel())
-		        .City(client.getCity())
-		        .Country(client.getCountry())
+		        .date_Creation(client.getDate_Creation())
+		        .email(client.getEmail())
+		        .tel(client.getTel())
+		        .city(client.getCity())
+		        .country(client.getCountry())
 		        .build();
 		  }
 

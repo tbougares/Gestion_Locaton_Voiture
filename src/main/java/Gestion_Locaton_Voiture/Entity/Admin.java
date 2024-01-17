@@ -16,6 +16,6 @@ public class Admin extends  User {
 	
 	
 	@Column(name = "FullName")
-	private String Full_Name;
+	private String full_Name;
 
 }
