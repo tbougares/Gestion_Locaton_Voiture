@@ -78,7 +78,8 @@ public class CarServiceImpl implements CarService {
 	public Page<Car> findByModel(String model, Pageable pageable) {
 		// TODO Auto-generated method stub
 //		return carRepository.findByModel(PageRequest.of(pageable.getNumberOfPages(), pageable.getNumberOfPages(), pageable.s, model)));
-	return null;
+	//return carRepository.findByModel(model,pageable);
+		return null;
 	}
 
 }
