@@ -1,7 +1,5 @@
 package Gestion_Locaton_Voiture.Configuration;
 
-public class SwagerConfgiration {
-/*
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -30,6 +28,4 @@ public class SwaggerConfiguration {
 	        .paths(PathSelectors.any())
 	        .build();
 	  }
-}
-*/
 }
