@@ -1,24 +1,31 @@
 package Gestion_Locaton_Voiture.Dto;
 
 import Gestion_Locaton_Voiture.Entity.Addresse;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.Builder;
 import lombok.Data;
 
 @Builder
 @Data
 public class AddresDto {
-	
+	@NotBlank
+	@NotEmpty
 	  private String adresse1;
 
-	  
+	@NotBlank
+	@NotEmpty
 	  private String adresse2;
 
-
+	@NotBlank
+	@NotEmpty
 	  private String ville;
 
-	  
+	@NotBlank
+	@NotEmpty
 	  private String codePostale;
-
+	@NotBlank
+	@NotEmpty
 	  private String pays;
 
 	  public static AddresDto fromEntity(Addresse adresse) {

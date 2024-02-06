@@ -3,6 +3,8 @@ package Gestion_Locaton_Voiture.Dto;
 import java.util.Date;
 
 import Gestion_Locaton_Voiture.Entity.Order;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,27 +15,35 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderDto {
-
+	@NotBlank
+	@NotEmpty
 	private Integer id;
-	
+	@NotBlank
+	@NotEmpty
 	private String country;
-
+	@NotBlank
+	@NotEmpty
 	private String booking_City;
-
+	@NotBlank
+	@NotEmpty
 	private String return_City;
-	
+	@NotBlank
+	@NotEmpty
 	private Date start_Date;
-	
+	@NotBlank
+	@NotEmpty
 	private Date end_Date;
-	
+	@NotBlank
+	@NotEmpty
 	private int client_Age;
-	
-	
-	
+	@NotBlank
+	@NotEmpty	
 	private String Order_Status;
-	
+	@NotBlank
+	@NotEmpty
     private CarDto car;
-	
+	@NotBlank
+	@NotEmpty
     private UserDto user;
     public static OrderDto fromEntity(Order order) {
         if (order == null) {

@@ -4,6 +4,8 @@ import java.util.Date;
 
 import Gestion_Locaton_Voiture.Entity.Client;
 import Gestion_Locaton_Voiture.Entity.Gender;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,31 +16,43 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ClientDto {
-
+	@NotBlank
+	@NotEmpty
 	private Integer id;
-	
+	@NotBlank
+	@NotEmpty
 	private String first_Name;
-	
+	@NotBlank
+	@NotEmpty
 	private String last_Name;
-
+	@NotBlank
+	@NotEmpty
 	private Gender gender;
-
+	@NotBlank
+	@NotEmpty
 	private int age;
-	
+	@NotBlank
+	@NotEmpty
 	private AddresDto adress;
-	
+	@NotBlank
+	@NotEmpty
 	private String tel;
-
+	@NotBlank
+	@NotEmpty
 	private String city;
-	
+	@NotBlank
+	@NotEmpty
 	private String country;
-	
+	@NotBlank
+	@NotEmpty
 	private String CIN;
-	
+	@NotBlank
+	@NotEmpty
 	
 	
 	private Date date_Creation;
-	
+	@NotBlank
+	@NotEmpty
 	
 	private String email;
 	 public static ClientDto fromEntity(Client client) {

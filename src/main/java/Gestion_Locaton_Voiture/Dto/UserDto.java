@@ -4,6 +4,8 @@ import java.util.Date;
 import java.util.List;
 
 import Gestion_Locaton_Voiture.Entity.User;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,17 +16,23 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserDto {
-	
+	@NotBlank
+	@NotEmpty
 	private Integer id;
-	
+	@NotBlank
+	@NotEmpty
     private Date last_CheckIn;
-	
+	@NotBlank
+	@NotEmpty
 	private String userName;
-	
+	@NotBlank
+	@NotEmpty
 	private String passWord;
-	
+	@NotBlank
+	@NotEmpty
     private RoleDto role;
-	
+	@NotBlank
+	@NotEmpty
     private List<OrderDto> orders;
 
     public static UserDto fromEntity(User user) {
