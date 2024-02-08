@@ -1,4 +1,4 @@
-package Gestion_Locaton_Voiture.Service.Impl;
+package Gestion_Locaton_Voiture.Services.Impl;
 
 import java.util.List;
 import java.util.Optional;
@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import Gestion_Locaton_Voiture.Entity.Role;
 import Gestion_Locaton_Voiture.Repository.RoleRepository;
 import Gestion_Locaton_Voiture.Services.RoleService;
-import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 
 @Service

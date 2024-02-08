@@ -28,6 +28,8 @@ public class UserDto {
 	@NotBlank
 	@NotEmpty
 	private String passWord;
+	
+	private String enabled;
 	@NotBlank
 	@NotEmpty
     private RoleDto role;
@@ -42,8 +44,8 @@ public class UserDto {
         return UserDto.builder()
             .id(user.getId())
             .last_CheckIn(user.getLast_CheckIn())
-            .userName(user.getUserName())
-            .passWord(user.getPassWord())
+            .userName(user.getUsername())
+            .passWord(user.getPassword())
             .role(RoleDto.fromEntity(user.getRole()))
             .build();
 

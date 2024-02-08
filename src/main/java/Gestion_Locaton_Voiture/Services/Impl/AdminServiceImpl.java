@@ -1,4 +1,4 @@
-package Gestion_Locaton_Voiture.Service.Impl;
+package Gestion_Locaton_Voiture.Services.Impl;
 
 import org.springframework.stereotype.Service;
 

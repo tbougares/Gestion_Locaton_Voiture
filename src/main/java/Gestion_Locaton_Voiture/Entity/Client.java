@@ -32,6 +32,7 @@ public class Client extends User {
 	@Column(name = "Age")
 	private int age;
 	
+	
 	@Embedded
 	@Column(name = "Adress")
 	private Addresse adress;
