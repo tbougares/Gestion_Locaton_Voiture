@@ -10,6 +10,9 @@ import org.springframework.security.config.annotation.web.configurers.HeadersCon
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import Gestion_Locaton_Voiture.Filter.JwtFilter;
 
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import static jakarta.servlet.DispatcherType.ERROR;
@@ -21,6 +24,7 @@ import static org.springframework.security.web.util.matcher.AntPathRequestMatche
 @RequiredArgsConstructor
 public class WebSecurityConfiguration {
 
+	private final JwtFilter filter;
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf(AbstractHttpConfigurer::disable)
@@ -32,7 +36,8 @@ public class WebSecurityConfiguration {
                                 antMatcher("/swagger-ui.html"),
                                 antMatcher("/swagger-ui/**"),
                                 antMatcher("/**")).permitAll().
-                        anyRequest().authenticated()) ;
+                        anyRequest().authenticated()) 
+                .addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);
 
 
         http.headers(httpSecurityHeadersConfigurer -> httpSecurityHeadersConfigurer.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable));
