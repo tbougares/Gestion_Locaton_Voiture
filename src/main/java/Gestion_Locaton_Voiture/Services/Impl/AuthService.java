@@ -34,7 +34,7 @@ public class AuthService {
     public void register(RegisterRequest request) {
         var user = mapper.toUser(request);
         var encryptedPassword = passwordEncoder.encode(user.getPassword());
-        user.setPassWord(encryptedPassword);
+        user.setPassword(encryptedPassword);
         // get or create student role
         /*Role studentRole = roleRepository.findByName(RoleEnum.ROLE_STUDENT)
                         .orElseGet(() -> {

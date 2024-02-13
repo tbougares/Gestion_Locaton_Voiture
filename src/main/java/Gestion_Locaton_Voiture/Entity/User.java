@@ -36,8 +36,8 @@ public class User extends AbstractClasse implements UserDetails {
 	@Column(name = "UserName")
 	private String userName;
 	
-	@Column(name = "PassWord")
-	private String passWord;
+	@Column(name = "Password")
+	private String password;
 	
 	@Column(name="Email")
 	private String email;
@@ -46,7 +46,7 @@ public class User extends AbstractClasse implements UserDetails {
 
 	
 	@ManyToOne
-    @JoinColumn(name="role_id", nullable=false)
+    @JoinColumn(name="role_id")
     private Role role;
 	
 	@OneToMany(mappedBy = "user")
@@ -61,7 +61,7 @@ public class User extends AbstractClasse implements UserDetails {
 	@Override
 	public String getPassword() {
 		// TODO Auto-generated method stub
-		return passWord;
+		return password;
 	}
 
 	@Override
@@ -91,7 +91,7 @@ public class User extends AbstractClasse implements UserDetails {
 	@Override
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
-		return enabled;
+		return true;
 	}
 
 	

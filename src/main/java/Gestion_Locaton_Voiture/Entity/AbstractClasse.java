@@ -26,13 +26,5 @@ public class AbstractClasse  {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 private Integer id;
-@Column(name = "date_creation",nullable = false)
-
-@CreationTimestamp
-private Date dateCreation;
-@LastModifiedDate
-@Column(name = "LastModifierDate")
-@JsonIgnore
-private Instant ModifierDate;
 
 }

@@ -76,7 +76,7 @@ public class ClientServiceImpl implements ClientService {
 		if (client.getGender() != null) existingClient.setGender(client.getGender());
 		if (client.getLast_CheckIn() != null) existingClient.setLast_CheckIn(client.getLast_CheckIn());
 		if (client.getLast_Name() != null) existingClient.setLast_Name(client.getLast_Name());
-		if (client.getPassword() != null) existingClient.setPassWord(client.getPassword());
+		if (client.getPassword() != null) existingClient.setPassword(client.getPassword());
 		if (client.getTel() != null) existingClient.setTel(client.getTel());
 		if (client.getUsername() != null) existingClient.setUserName(client.getUsername());
 		

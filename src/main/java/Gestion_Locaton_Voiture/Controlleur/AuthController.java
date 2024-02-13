@@ -23,6 +23,7 @@ public class AuthController {
     public ResponseEntity<Void> register(
             @RequestBody @Valid RegisterRequest request
     ) {
+    	
         service.register(request);
         return ResponseEntity.accepted().build();
     }

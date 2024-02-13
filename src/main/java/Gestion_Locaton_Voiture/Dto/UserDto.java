@@ -27,7 +27,7 @@ public class UserDto {
 	private String userName;
 	@NotBlank
 	@NotEmpty
-	private String passWord;
+	private String password;
 	
 	private String enabled;
 	@NotBlank
@@ -45,7 +45,7 @@ public class UserDto {
             .id(user.getId())
             .last_CheckIn(user.getLast_CheckIn())
             .userName(user.getUsername())
-            .passWord(user.getPassword())
+            .password(user.getPassword())
             .role(RoleDto.fromEntity(user.getRole()))
             .build();
 
@@ -59,7 +59,7 @@ public class UserDto {
         user.setId(dto.getId());
         user.setLast_CheckIn(dto.getLast_CheckIn());
         user.setUserName(dto.getUserName());
-        user.setPassWord(dto.getPassWord());
+        user.setPassword(dto.getPassword());
         user.setRole(RoleDto.toEntity(dto.getRole()));
         return user;
       }

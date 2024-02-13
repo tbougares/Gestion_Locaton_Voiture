@@ -10,7 +10,7 @@ public class AuthMapper {
     	User student = new User();
         student.setEmail(s.getEmail());
         // FIXME
-        student.setPassWord(s.getPassword());
+        student.setPassword(s.getPassword());
         student.setEnabled(true);
         return student;
     }
