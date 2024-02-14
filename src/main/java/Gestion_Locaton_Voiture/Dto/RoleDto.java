@@ -31,12 +31,12 @@ public class RoleDto {
         return RoleDto.builder()
             .id(role.getId())
             .name(role.getName())
-            .user(
+           /* .user(
             		role.getUser() != null ?
                             role.getUser().stream()
                             .map(UserDto::fromEntity)
                             .collect(Collectors.toList()) : null
-            		)
+            		)*/
             
             
             .build();

@@ -46,7 +46,7 @@ public class UserDto {
             .last_CheckIn(user.getLast_CheckIn())
             .userName(user.getUsername())
             .password(user.getPassword())
-            .role(RoleDto.fromEntity(user.getRole()))
+         //   .role(RoleDto.fromEntity(user.getRole()))
             .build();
 
       }
@@ -60,7 +60,7 @@ public class UserDto {
         user.setLast_CheckIn(dto.getLast_CheckIn());
         user.setUserName(dto.getUserName());
         user.setPassword(dto.getPassword());
-        user.setRole(RoleDto.toEntity(dto.getRole()));
+       // user.setRole(RoleDto.toEntity(dto.getRole()));
         return user;
       }
 }

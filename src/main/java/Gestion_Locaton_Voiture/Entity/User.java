@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
@@ -44,10 +45,10 @@ public class User extends AbstractClasse implements UserDetails {
 	
     private boolean enabled;
 
-	
+	/*
 	@ManyToOne
     @JoinColumn(name="role_id")
-    private Role role;
+    private Role role;*/
 	
 	@OneToMany(mappedBy = "user")
     private List<Order> orders;
@@ -55,7 +56,7 @@ public class User extends AbstractClasse implements UserDetails {
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub
-		return null;
+		return List.of(new SimpleGrantedAuthority("Admin"));
 	}
 
 	@Override

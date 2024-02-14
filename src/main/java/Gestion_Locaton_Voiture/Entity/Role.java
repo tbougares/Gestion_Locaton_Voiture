@@ -16,6 +16,6 @@ public class Role extends AbstractClasse {
 	@Column(name = "Name")
 	private String name;
 	
-	@OneToMany(mappedBy = "role")
-    private List<User> user;
+	/*@OneToMany(mappedBy = "role")
+    private List<User> user;*/
 }

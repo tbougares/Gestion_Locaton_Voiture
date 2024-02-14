@@ -7,11 +7,11 @@ import Gestion_Locaton_Voiture.Entity.User;
 public class AuthMapper {
 
     public User toUser(RegisterRequest s) {
-    	User student = new User();
-        student.setEmail(s.getEmail());
+    	User user = new User();
+        user.setEmail(s.getEmail());
         // FIXME
-        student.setPassword(s.getPassword());
-        student.setEnabled(true);
-        return student;
+        user.setPassword(s.getPassword());
+        user.setEnabled(true);
+        return user;
     }
 }
