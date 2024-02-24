@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import Gestion_Locaton_Voiture.Entity.Order;
+import Gestion_Locaton_Voiture.Entity.Reservation;
 import Gestion_Locaton_Voiture.Repository.OrderRepository;
 import Gestion_Locaton_Voiture.Services.OrderService;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +17,7 @@ public class OrderServiceImpl implements OrderService {
 	private final OrderRepository orderRepository;
 
 	@Override
-	public List<Order> findAll() {
+	public List<Reservation> findAll() {
 		// TODO Auto-generated method stub
 		return orderRepository.findAll();
 	}
@@ -25,7 +25,7 @@ public class OrderServiceImpl implements OrderService {
 	
 
 	@Override
-	public Optional<Order> findById(Integer id) {
+	public Optional<Reservation> findById(Integer id) {
 		// TODO Auto-generated method stub
 		return orderRepository.findById(id);
 	}
@@ -48,7 +48,7 @@ public class OrderServiceImpl implements OrderService {
 
 
 	@Override
-	public Order CreateOneOrder(Order order) {
+	public Reservation CreateOneOrder(Reservation order) {
 		// TODO Auto-generated method stub
 		return orderRepository.save(order);
 	}

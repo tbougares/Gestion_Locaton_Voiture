@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import Gestion_Locaton_Voiture.Entity.Order;
+import Gestion_Locaton_Voiture.Entity.Reservation;
 import Gestion_Locaton_Voiture.Services.OrderService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
@@ -28,13 +28,13 @@ public class OrderControlleur {
 	
 	@GetMapping
 	@ApiOperation(value="GetAllOrder" )
-	public ResponseEntity<List<Order>> getAllClient()
+	public ResponseEntity<List<Reservation>> getAllClient()
 	{
 	return ResponseEntity.ok(orderService.findAll());	
 	}
 
 	@GetMapping("/{id}")
-    public ResponseEntity<Optional<Order>> findById(
+    public ResponseEntity<Optional<Reservation>> findById(
             @PathVariable("id") Integer orderId
     ) {
         return ResponseEntity.ok(orderService.findById(orderId));
@@ -42,7 +42,7 @@ public class OrderControlleur {
 	
 
 	@PostMapping
-	public ResponseEntity<Order> addClient(@RequestBody @Valid Order order)
+	public ResponseEntity<Reservation> addClient(@RequestBody @Valid Reservation order)
 	{
 		return ResponseEntity.ok(orderService.CreateOneOrder(order));
 

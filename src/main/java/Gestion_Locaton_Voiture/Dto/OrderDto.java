@@ -2,7 +2,7 @@ package Gestion_Locaton_Voiture.Dto;
 
 import java.util.Date;
 
-import Gestion_Locaton_Voiture.Entity.Order;
+import Gestion_Locaton_Voiture.Entity.Reservation;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
@@ -23,42 +23,42 @@ public class OrderDto {
 	private String country;
 	@NotBlank
 	@NotEmpty
-	private String booking_City;
+	private String bookingCity;
 	@NotBlank
 	@NotEmpty
-	private String return_City;
+	private String returnCity;
 	@NotBlank
 	@NotEmpty
-	private Date start_Date;
+	private Date startDate;
 	@NotBlank
 	@NotEmpty
-	private Date end_Date;
+	private Date endDate;
 	@NotBlank
 	@NotEmpty
-	private int client_Age;
+	private int clientAge;
 	@NotBlank
 	@NotEmpty	
-	private String Order_Status;
+	private String OrderStatus;
 	@NotBlank
 	@NotEmpty
     private CarDto car;
 	@NotBlank
 	@NotEmpty
     private UserDto user;
-    public static OrderDto fromEntity(Order order) {
+    public static OrderDto fromEntity(Reservation order) {
         if (order == null) {
           return null;
         }
         return OrderDto.builder()
             .id(order.getId())
             .country(order.getCountry())
-            .booking_City(order.getBooking_City())
-            .return_City(order.getReturn_City())
-            .car(CarDto.fromEntity(order.getCar()))
-            .client_Age(order.getClient_Age())
-            .end_Date(order.getEnd_Date())
-            .Order_Status(order.getOrder_Status())
-            .start_Date(order.getStart_Date())
+            //.bookingCity(order.getBookingCity())
+            //.returnCity(order.getReturnCity())
+        //    .car(CarDto.fromEntity(order.getCar()))
+            //.clientAge(order.getClientAge())
+            //.endDate(order.getEndDate())
+            //.OrderStatus(order.getOrderStatus())
+          ///  .startDate(order.getStartDate())
 
 
 
@@ -66,20 +66,20 @@ public class OrderDto {
 
       }
 
-      public static Order toEntity(OrderDto dto) {
+      public static Reservation toEntity(OrderDto dto) {
         if (dto == null) {
           return null;
         }
-        Order order = new Order();
+        Reservation order = new Reservation();
         order.setId(dto.getId());
         order.setCountry(dto.getCountry());
-        order.setBooking_City(dto.getBooking_City());
-        order.setReturn_City(dto.getReturn_City());
-        order.setCar(CarDto.toEntity(dto.getCar()));
-        order.setClient_Age(dto.getClient_Age());
-        order.setEnd_Date(dto.getEnd_Date());
-        order.setOrder_Status(dto.getOrder_Status());
-        order.setStart_Date(dto.getStart_Date());
+       // order.setBookingCity(dto.getBookingCity());
+        //order.setReturnCity(dto.getReturnCity());
+        //order.setCar(CarDto.toEntity(dto.getCar()));
+        //order.setClientAge(dto.getClientAge());
+        //order.setEndDate(dto.getEndDate());
+        //order.setOrderStatus(dto.getOrderStatus());
+        //order.setStartDate(dto.getStartDate());
         return order;
       }
 }

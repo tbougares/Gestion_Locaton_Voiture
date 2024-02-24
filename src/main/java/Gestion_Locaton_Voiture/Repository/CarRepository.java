@@ -1,5 +1,6 @@
 package Gestion_Locaton_Voiture.Repository;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,5 +14,5 @@ public interface CarRepository extends JpaRepository<Car, Integer> {
 
 	public Optional<Car> findByMatricule (String Matricule);
 	public List<Car> findCarByBrande (String brande);
-	Page<Car> findByModel(String model, Pageable pagebale);
+	Page<List<Car>> findByModel(String model, Pageable pagebale);
 }

@@ -54,7 +54,7 @@ public class ClientServiceImpl implements ClientService {
 	}
 
 	@Override
-	public List<Client> findByStartAgeBetween(int startAge, int endAge) {
+	public List<Client> findByAgeBetween(int startAge, int endAge) {
 		// TODO Auto-generated method stub
 		return clientRepository.findByAgeBetween(startAge, endAge);
 	}

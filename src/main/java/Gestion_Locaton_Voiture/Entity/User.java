@@ -30,6 +30,11 @@ import lombok.*;
 
 public class User extends AbstractClasse implements UserDetails {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Column(name = "LastCheckIn")
 	private Date last_CheckIn;
@@ -43,7 +48,6 @@ public class User extends AbstractClasse implements UserDetails {
 	@Column(name="Email")
 	private String email;
 	
-    private boolean enabled;
 
 	/*
 	@ManyToOne
@@ -51,7 +55,7 @@ public class User extends AbstractClasse implements UserDetails {
     private Role role;*/
 	
 	@OneToMany(mappedBy = "user")
-    private List<Order> orders;
+    private List<Reservation> orders;
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {

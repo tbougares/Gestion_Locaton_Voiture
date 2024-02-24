@@ -14,7 +14,6 @@ import Gestion_Locaton_Voiture.Dto.auth.AuthentificationRequest;
 import Gestion_Locaton_Voiture.Dto.auth.AuthentificationResponse;
 import Gestion_Locaton_Voiture.Dto.auth.RegisterRequest;
 import Gestion_Locaton_Voiture.Entity.User;
-import Gestion_Locaton_Voiture.Repository.RoleRepository;
 import Gestion_Locaton_Voiture.Repository.UserRepository;
 
 import java.util.HashMap;
@@ -29,7 +28,7 @@ public class AuthService {
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authManager;
     private final JwtService jwtService;
-    private final RoleRepository roleRepository;
+//    private final RoleRepository roleRepository;
 
     public void register(RegisterRequest request) {
         var user = mapper.toUser(request);

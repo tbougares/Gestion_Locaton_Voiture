@@ -17,7 +17,7 @@ public interface ClientService {
 	
 	public List<Client> findClientByFirst_NameNamedParamsNative(String first_Name);
 	
-	public List<Client> findByStartAgeBetween(int startAge, int endAge);
+	public List<Client> findByAgeBetween(int startAge, int endAge);
 	public Client update(Client client ,Integer id);
 	public Client CreateOneClient (Client client);
 }

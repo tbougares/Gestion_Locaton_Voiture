@@ -11,7 +11,7 @@ public class AuthMapper {
         user.setEmail(s.getEmail());
         // FIXME
         user.setPassword(s.getPassword());
-        user.setEnabled(true);
+        //user.setEnabled(true);
         return user;
     }
 }

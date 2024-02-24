@@ -30,9 +30,9 @@ public class UserDto {
 	private String password;
 	
 	private String enabled;
-	@NotBlank
-	@NotEmpty
-    private RoleDto role;
+	//@NotBlank
+	//@NotEmpty
+    //private RoleDto role;
 	@NotBlank
 	@NotEmpty
     private List<OrderDto> orders;

@@ -1,53 +1,55 @@
 package Gestion_Locaton_Voiture.Entity;
 import java.util.Date;
-import org.springframework.format.annotation.DateTimeFormat;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.*;
 
 @Entity
-@Data
-@EqualsAndHashCode(callSuper = true)
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="Order")
-public class Order extends AbstractClasse {
+@Table(name="resérvation")
+public class Reservation  {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+	
 	@Column(name = "country")
 	private String country;
 
 	@Column(name = "BookingCity")
-	private String booking_City;
+	private String bookingCity;
 
 	@Column(name = "ReturnCity")
-	private String return_City;
+	private String returnCity;
 	
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Column(name = "StartDate")
-	private Date start_Date;
+	private Date startDate;
 	
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Column(name = "EndDate")
-	private Date end_Date;
+	private Date endDate;
 	
 	@Column(name = "ClientAge")
-	private int client_Age;
+	private Integer clientAge;
 	
 	
 	
 	@Column(name = "OrderStatus")
-	private String Order_Status;
+	private String orderStatus;
 	
 	@ManyToOne
-    @JoinColumn(name="car_id", nullable=false)
+    @JoinColumn(name="car_id")
     private Car car;
 	
 	@ManyToOne
-    @JoinColumn(name="user_id", nullable=false)
+    @JoinColumn(name="user_id")
     private User user;
 	
 

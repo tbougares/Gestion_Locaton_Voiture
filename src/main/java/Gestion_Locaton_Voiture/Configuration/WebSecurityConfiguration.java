@@ -36,7 +36,7 @@ public class WebSecurityConfiguration {
                                 antMatcher("/swagger-ui.html"),
                                 antMatcher("/swagger-ui/**"),
                                 
-                                antMatcher("/auth/**")).permitAll().
+                                antMatcher("/**")).permitAll().
                         anyRequest().authenticated()) 
                 .addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);
 

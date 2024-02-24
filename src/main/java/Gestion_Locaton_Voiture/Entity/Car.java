@@ -87,5 +87,5 @@ public class Car extends AbstractClasse {
 	    private Photo photo;
 		
 		@OneToMany(mappedBy = "car")
-	    private List<Order> orders;
+	    private List<Reservation> orders;
 }

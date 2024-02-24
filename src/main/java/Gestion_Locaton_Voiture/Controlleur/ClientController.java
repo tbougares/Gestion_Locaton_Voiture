@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import Gestion_Locaton_Voiture.Entity.Client;
@@ -36,14 +37,37 @@ public class ClientController {
 	{
 	return ResponseEntity.ok(clientService.findAll());	
 	}
+	
+	
 	@GetMapping("/{id}")
     public ResponseEntity<Optional<Client>> findById(
-            @PathVariable("id") Integer clientId
+    		@RequestParam("id") Integer clientId
     ) {
         return ResponseEntity.ok(clientService.findById(clientId));
     }
 	
+	
+	@GetMapping("/{CIN}")
+    public ResponseEntity<Client> findByCIN(
+            @RequestParam("CIN") String clientCIN
+    ) {
+        return ResponseEntity.ok(clientService.findByCIN(clientCIN));
+    }
+	
+	@GetMapping("/{FirstName}")
+	public ResponseEntity<List<Client>> getAllClientByFirstName(
+			@RequestParam("FirstName") String clientFirstName)
+	{
+	return ResponseEntity.ok(clientService.findClientByFirst_NameNamedParamsNative(clientFirstName));	
+	}
 
+	@GetMapping("/findByAgeBetween")
+	public ResponseEntity<List<Client>> getAllClientByAge(
+			@RequestParam("startAge") int clientStartAge,
+			@RequestParam("startAge") int clientEndAge)
+	{
+	return ResponseEntity.ok(clientService.findByAgeBetween(clientStartAge, clientEndAge));	
+	}
 	@PostMapping
 	public ResponseEntity<Client> addClient(@RequestBody @Valid Client client)
 	{
