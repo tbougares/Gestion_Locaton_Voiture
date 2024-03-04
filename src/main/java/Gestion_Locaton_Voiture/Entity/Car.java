@@ -2,6 +2,9 @@ package Gestion_Locaton_Voiture.Entity;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -77,15 +80,15 @@ public class Car extends AbstractClasse {
 		@Column(name = "Rate")
 		private Double rate;
 		
-		//-------------------Assurence-------------------
+		//-------------------Assurence------------------
 		
 
 		//-----------------------------------------------
 		
-		@OneToOne(cascade = CascadeType.ALL)
-	    @JoinColumn(name = "photo_id", referencedColumnName = "id")
-	    private Photo photo;
-		
+    	@OneToOne(cascade = CascadeType.ALL)
+        @JoinColumn(name = "photo_id", referencedColumnName = "id")
+        private Photo photo;
+		@JsonBackReference
 		@OneToMany(mappedBy = "car")
 	    private List<Reservation> orders;
 }

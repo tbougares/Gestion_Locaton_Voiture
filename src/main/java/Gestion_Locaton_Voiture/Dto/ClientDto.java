@@ -21,7 +21,7 @@ public class ClientDto {
 	private Integer id;
 	@NotBlank
 	@NotEmpty
-	private String first_Name;
+	private String firstName;
 	@NotBlank
 	@NotEmpty
 	private String last_Name;
@@ -61,7 +61,7 @@ public class ClientDto {
 		    }
 		    return ClientDto.builder()
 		        .id(client.getId())
-		        .first_Name(client.getFirst_Name())
+		        .firstName(client.getFirstName())
 		        .last_Name(client.getLast_Name())
 		        .gender(client.getGender())
 
@@ -82,7 +82,7 @@ public class ClientDto {
 		    }
 		    Client client = new Client();
 		    client.setId(dto.getId());
-		    client.setFirst_Name(dto.getFirst_Name());
+		    client.setFirstName(dto.getFirstName());
 		    client.setLast_Name(dto.getLast_Name());
 		    client.setAdress(AddresDto.toEntity(dto.getAdress()));
 		    client.setAge(dto.getAge());

@@ -39,7 +39,7 @@ public class ClientController {
 	}
 	
 	
-	@GetMapping("/{id}")
+	@GetMapping("/id/{id}")
     public ResponseEntity<Optional<Client>> findById(
     		@RequestParam("id") Integer clientId
     ) {
@@ -47,24 +47,24 @@ public class ClientController {
     }
 	
 	
-	@GetMapping("/{CIN}")
+	@GetMapping("/CIN/{CIN}")
     public ResponseEntity<Client> findByCIN(
             @RequestParam("CIN") String clientCIN
     ) {
         return ResponseEntity.ok(clientService.findByCIN(clientCIN));
     }
 	
-	@GetMapping("/{FirstName}")
+	@GetMapping("/FirstName/{FirstName}")
 	public ResponseEntity<List<Client>> getAllClientByFirstName(
-			@RequestParam("FirstName") String clientFirstName)
+			@PathVariable("FirstName") String clientFirstName)
 	{
-	return ResponseEntity.ok(clientService.findClientByFirst_NameNamedParamsNative(clientFirstName));	
+	return ResponseEntity.ok(clientService.findClientByFirstName(clientFirstName));	
 	}
 
 	@GetMapping("/findByAgeBetween")
 	public ResponseEntity<List<Client>> getAllClientByAge(
 			@RequestParam("startAge") int clientStartAge,
-			@RequestParam("startAge") int clientEndAge)
+			@RequestParam("endAge") int clientEndAge)
 	{
 	return ResponseEntity.ok(clientService.findByAgeBetween(clientStartAge, clientEndAge));	
 	}

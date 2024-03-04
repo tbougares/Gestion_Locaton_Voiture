@@ -26,30 +26,36 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/Cars")
-@RequiredArgsConstructor
-@Api()
+
+
 public class CarControlleur {
 
 	
 	
 	private final CarService carService;
 	
-	@GetMapping
-	@ApiOperation(value="GetAllCar" )
-	public ResponseEntity<List<Car>> getAllCars()
-	{
-	return ResponseEntity.ok(carService.findAll());	
+	public CarControlleur(CarService carService) {
+		super();
+		this.carService = carService;
 	}
 
-	@GetMapping("/{Car-Matricuel}")
-	public ResponseEntity<Optional<Car>> getAllCar(
+	@GetMapping
+	
+	public ResponseEntity<List<Car>> getAllCars()
+	{
+	return ResponseEntity.ok(carService.findAll());
+//		return ResponseEntity.ok("test");
+	}
+
+	@GetMapping("/matricuel/{Car-Matricuel}")
+	public ResponseEntity<Optional<Car>> getAllCarByMatricuel(
 			@RequestParam("Car-Matricuel") String carMat)
 	{
 	return ResponseEntity.ok(carService.findByMatricuel(carMat));	
 	}
 	
 	
-	@GetMapping("/{Car-Brand}")
+	@GetMapping("/Car-Brand/{Car-Brand}")
 	public ResponseEntity<List<Car>> getAllCarsByBrand(
 			@RequestParam("Car-Brand") String carBrande)
 	{
@@ -57,8 +63,8 @@ public class CarControlleur {
 	}
 	
 	
-	@GetMapping("/Car-Brand/{model}")
-	public ResponseEntity<Page<List<Car>>> getAllCarsByModel(@RequestParam("model") String model,
+	@GetMapping("/Car-model/{model}")
+	public ResponseEntity<Page<List<Car>>> getAllCarsByModel(@RequestParam("model") int model,
 			@RequestParam("page") int page, 
 			  @RequestParam("size") int size)
 	{
@@ -66,7 +72,7 @@ public class CarControlleur {
 	}
 	
 	
-	@GetMapping("/{id}")
+	@GetMapping("/id/{id}")
     public ResponseEntity<Optional<Car>> findById(
             @PathVariable("id") Integer carId
     ) {

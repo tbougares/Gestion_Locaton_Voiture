@@ -48,9 +48,9 @@ public class ClientServiceImpl implements ClientService {
 	}
 
 	@Override
-	public List<Client> findClientByFirst_NameNamedParamsNative(String first_Name) {
+	public List<Client> findClientByFirstName(String firstName) {
 		// TODO Auto-generated method stub
-		return clientRepository.findClientByFirst_NameNamedParamsNative(first_Name);
+		return clientRepository.findByFirstName(firstName);
 	}
 
 	@Override
@@ -72,7 +72,7 @@ public class ClientServiceImpl implements ClientService {
 		if (client.getCity() != null) existingClient.setCity(client.getCity());
 		if (client.getDate_Creation() != null) existingClient.setDate_Creation(client.getDate_Creation());
 		if (client.getEmail() != null) existingClient.setEmail(client.getEmail());
-		if (client.getFirst_Name() != null) existingClient.setFirst_Name(client.getFirst_Name());
+		if (client.getFirstName() != null) existingClient.setFirstName(client.getFirstName());
 		if (client.getGender() != null) existingClient.setGender(client.getGender());
 		if (client.getLast_CheckIn() != null) existingClient.setLast_CheckIn(client.getLast_CheckIn());
 		if (client.getLast_Name() != null) existingClient.setLast_Name(client.getLast_Name());

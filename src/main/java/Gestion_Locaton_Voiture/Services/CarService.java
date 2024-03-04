@@ -16,7 +16,7 @@ public interface CarService {
 	public Optional<Car> findById (Integer id);
 	public void deleteById(Integer id);
 	public void deleteAll();
-	public Page<List<Car>> findByModel(String model, int NombrePage,int SizePage);
+	public Page<List<Car>> findByModel(int model, int NombrePage,int SizePage);
 	public List<Car> findCarByBrande (String brande); 
 	public Car CreateOneCar(Car car);
 	

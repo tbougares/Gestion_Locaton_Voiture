@@ -12,6 +12,6 @@ public interface OrderService {
 	public Optional<Reservation> findById (Integer id);
 	public void deleteById(Integer id);
 	public void deleteAll();
-	public Reservation CreateOneOrder (Reservation order);
+	public void assigneResevationToCarAndToClient(Integer id,Integer idCar,Integer idClient);
 
 }

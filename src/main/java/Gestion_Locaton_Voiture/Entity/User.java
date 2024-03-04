@@ -9,6 +9,8 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Inheritance;
@@ -45,7 +47,7 @@ public class User extends AbstractClasse implements UserDetails {
 	@Column(name = "Password")
 	private String password;
 	
-	@Column(name="Email")
+	@Column(name="email")
 	private String email;
 	
 
@@ -53,7 +55,8 @@ public class User extends AbstractClasse implements UserDetails {
 	@ManyToOne
     @JoinColumn(name="role_id")
     private Role role;*/
-	
+	@JsonBackReference
+
 	@OneToMany(mappedBy = "user")
     private List<Reservation> orders;
 

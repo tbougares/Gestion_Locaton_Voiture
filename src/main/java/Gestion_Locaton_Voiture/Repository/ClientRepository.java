@@ -13,10 +13,8 @@ import Gestion_Locaton_Voiture.Entity.Client;
 public interface ClientRepository extends JpaRepository<Client, Integer> {
 	
 	public Client  findByCIN(String CIN);
-	@Query(value = "SELECT * FROM Client u WHERE u.first_Name = :first_Name ", 
-			  nativeQuery = true)
-			List<Client> findClientByFirst_NameNamedParamsNative(
-			  @Param("first_Name") String first_Name);
+	@Query("SELECT c FROM Client c  WHERE c.firstName = ?1 ")
+			List<Client> findByFirstName(String firstName);
 	/*@Query(value = "SELECT * FROM Client u WHERE u.age = :startAge And u.age = :endAge ", 
 			  nativeQuery = true)
 			List<Client> findClientByFirst_NameNamedParamsNative(

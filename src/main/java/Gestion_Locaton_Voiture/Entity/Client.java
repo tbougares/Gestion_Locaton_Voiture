@@ -19,8 +19,13 @@ import lombok.*;
 
 public class Client extends User {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Column(name = "FirstName")
-	private String first_Name;
+	private String firstName;
 	
 	@Column(name = "LastName")
 	private String last_Name;
@@ -55,7 +60,7 @@ public class Client extends User {
 	@Column(name = "DateCreation")
 	private Date date_Creation;
 	
-	@Column(name = "Email")
+	@Column(name = "email")
 	private String email;
 	
 }

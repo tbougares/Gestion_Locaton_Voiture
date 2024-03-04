@@ -1,5 +1,9 @@
 package Gestion_Locaton_Voiture.Entity;
 import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -43,11 +47,11 @@ public class Reservation  {
 	
 	@Column(name = "OrderStatus")
 	private String orderStatus;
-	
+    @JsonManagedReference
 	@ManyToOne
     @JoinColumn(name="car_id")
     private Car car;
-	
+	@JsonManagedReference
 	@ManyToOne
     @JoinColumn(name="user_id")
     private User user;

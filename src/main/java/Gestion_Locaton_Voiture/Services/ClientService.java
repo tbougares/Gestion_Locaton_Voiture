@@ -15,7 +15,7 @@ public interface ClientService {
 	public void deleteAll();
 	public Client  findByCIN(String CIN);
 	
-	public List<Client> findClientByFirst_NameNamedParamsNative(String first_Name);
+	public List<Client> findClientByFirstName(String firstsName);
 	
 	public List<Client> findByAgeBetween(int startAge, int endAge);
 	public Client update(Client client ,Integer id);

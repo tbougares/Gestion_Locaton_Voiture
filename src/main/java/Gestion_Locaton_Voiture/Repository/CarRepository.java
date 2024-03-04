@@ -14,5 +14,5 @@ public interface CarRepository extends JpaRepository<Car, Integer> {
 
 	public Optional<Car> findByMatricule (String Matricule);
 	public List<Car> findCarByBrande (String brande);
-	Page<List<Car>> findByModel(String model, Pageable pagebale);
+	Page<List<Car>> findByModel(int model, Pageable pagebale);
 }

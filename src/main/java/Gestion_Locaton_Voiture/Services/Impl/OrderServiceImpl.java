@@ -6,6 +6,8 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import Gestion_Locaton_Voiture.Entity.Reservation;
+import Gestion_Locaton_Voiture.Repository.CarRepository;
+import Gestion_Locaton_Voiture.Repository.ClientRepository;
 import Gestion_Locaton_Voiture.Repository.OrderRepository;
 import Gestion_Locaton_Voiture.Services.OrderService;
 import lombok.RequiredArgsConstructor;
@@ -15,6 +17,11 @@ import lombok.RequiredArgsConstructor;
 public class OrderServiceImpl implements OrderService {
 
 	private final OrderRepository orderRepository;
+	
+	private final CarRepository carRepository;
+
+	private final ClientRepository clientRepository;
+	
 
 	@Override
 	public List<Reservation> findAll() {
@@ -47,10 +54,12 @@ public class OrderServiceImpl implements OrderService {
 
 
 
+
+
 	@Override
-	public Reservation CreateOneOrder(Reservation order) {
+	public void assigneResevationToCarAndToClient(Integer id, Integer idCar, Integer idClient) {
 		// TODO Auto-generated method stub
-		return orderRepository.save(order);
+		
 	}
 
 }
