@@ -1,5 +1,6 @@
 package Gestion_Locaton_Voiture.Dto;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import Gestion_Locaton_Voiture.Entity.Client;
@@ -50,7 +51,7 @@ public class ClientDto {
 	@NotEmpty
 	
 	
-	private Date date_Creation;
+	private LocalDate date_Creation;
 	@NotBlank
 	@NotEmpty
 	

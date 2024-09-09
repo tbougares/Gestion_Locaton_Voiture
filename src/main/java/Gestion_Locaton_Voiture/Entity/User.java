@@ -20,6 +20,7 @@ import jakarta.persistence.InheritanceType;
 
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 @Entity
@@ -47,7 +48,8 @@ public class User extends AbstractClasse implements UserDetails {
 	@Column(name = "Password")
 	private String password;
 	
-	@Column(name="email")
+	
+	@Column(name="Email")
 	private String email;
 	
 

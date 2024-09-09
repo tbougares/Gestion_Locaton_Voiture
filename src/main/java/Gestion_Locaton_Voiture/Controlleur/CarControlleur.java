@@ -1,9 +1,11 @@
 package Gestion_Locaton_Voiture.Controlleur;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.domain.Page;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -39,19 +41,19 @@ public class CarControlleur {
 		this.carService = carService;
 	}
 
-	@GetMapping
+	@GetMapping("/AllCars")
 	
-	public ResponseEntity<List<Car>> getAllCars()
+	public List<Car> getAllCars()
 	{
-	return ResponseEntity.ok(carService.findAll());
-//		return ResponseEntity.ok("test");
+	return carService.findAll();
+		//return ResponseEntity.ok("test");
 	}
 
-	@GetMapping("/matricuel/{Car-Matricuel}")
-	public ResponseEntity<Optional<Car>> getAllCarByMatricuel(
-			@RequestParam("Car-Matricuel") String carMat)
+	@GetMapping("/matricuel/{Matricuel}")
+	public Optional<Car> getCarByMatricuel(
+			@RequestParam("Matricuel") String carMat)
 	{
-	return ResponseEntity.ok(carService.findByMatricuel(carMat));	
+	return carService.findByMatricuel(carMat);	
 	}
 	
 	
@@ -100,5 +102,18 @@ public class CarControlleur {
 		carService.deleteAll();
 		
 	}
+	@GetMapping("/disponibles")
+    public List<Car> getVoituresDisponibles(
+        @RequestParam("dateDebut") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dateDebut,
+        @RequestParam("dateFin") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dateFin) {
+        return carService.getVoituresDisponibles(dateDebut, dateFin);
+    }
+	 @GetMapping("/suggestions-disponibilite")
+	    public List<String> getSuggestionsVoituresDisponibles(
+	        @RequestParam("dateDebut") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dateDebut,
+	        @RequestParam("dateFin") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dateFin) {
+	        int flexibilite = 3; // Flexibilité de ±3 jours
+	        return carService.getSuggestionsVoituresDisponibles(dateDebut, dateFin, flexibilite);
+	    }
 
 }

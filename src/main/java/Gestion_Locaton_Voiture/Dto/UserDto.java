@@ -35,7 +35,7 @@ public class UserDto {
     //private RoleDto role;
 	@NotBlank
 	@NotEmpty
-    private List<OrderDto> orders;
+    private List<ReservationDto> orders;
 
     public static UserDto fromEntity(User user) {
         if (user == null) {

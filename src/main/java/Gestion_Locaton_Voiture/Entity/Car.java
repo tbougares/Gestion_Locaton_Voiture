@@ -91,4 +91,8 @@ public class Car extends AbstractClasse {
 		@JsonBackReference
 		@OneToMany(mappedBy = "car")
 	    private List<Reservation> orders;
+		@JsonBackReference
+		@OneToMany
+	    private List<Entretein> entreteins;
+
 }

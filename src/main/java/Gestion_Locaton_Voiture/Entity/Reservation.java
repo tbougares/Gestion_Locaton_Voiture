@@ -1,4 +1,5 @@
 package Gestion_Locaton_Voiture.Entity;
+import java.time.LocalDate;
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -35,10 +36,10 @@ public class Reservation  {
 	private String returnCity;
 	
 	@Column(name = "StartDate")
-	private Date startDate;
+	private LocalDate startDate;
 	
 	@Column(name = "EndDate")
-	private Date endDate;
+	private LocalDate endDate;
 	
 	@Column(name = "ClientAge")
 	private Integer clientAge;

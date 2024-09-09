@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrderDto {
+public class ReservationDto {
 	@NotBlank
 	@NotEmpty
 	private Integer id;
@@ -45,11 +45,11 @@ public class OrderDto {
 	@NotBlank
 	@NotEmpty
     private UserDto user;
-    public static OrderDto fromEntity(Reservation order) {
+    public static ReservationDto fromEntity(Reservation order) {
         if (order == null) {
           return null;
         }
-        return OrderDto.builder()
+        return ReservationDto.builder()
             .id(order.getId())
             .country(order.getCountry())
             //.bookingCity(order.getBookingCity())
@@ -66,7 +66,7 @@ public class OrderDto {
 
       }
 
-      public static Reservation toEntity(OrderDto dto) {
+      public static Reservation toEntity(ReservationDto dto) {
         if (dto == null) {
           return null;
         }

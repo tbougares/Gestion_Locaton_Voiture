@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import Gestion_Locaton_Voiture.Entity.Reservation;
 import Gestion_Locaton_Voiture.Services.CarService;
 import Gestion_Locaton_Voiture.Services.ClientService;
-import Gestion_Locaton_Voiture.Services.OrderService;
+import Gestion_Locaton_Voiture.Services.ReservationService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import jakarta.validation.Valid;
@@ -23,24 +23,23 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/Reservation")
 @RequiredArgsConstructor
-public class OrderControlleur {
+public class ReservationControlleur {
 
-	private final OrderService orderService;
+	private final ReservationService reservationService;
 	private final ClientService clientService;
 	private final CarService carService;
 	
-	@GetMapping
-	@ApiOperation(value="GetAllOrder" )
+	@GetMapping("/GetAllOrder" )
 	public ResponseEntity<List<Reservation>> getAllReservation()
 	{
-	return ResponseEntity.ok(orderService.findAll());	
+	return ResponseEntity.ok(reservationService.findAll());	
 	}
 
 	@GetMapping("/{id}")
     public ResponseEntity<Optional<Reservation>> findById(
             @PathVariable("id") Integer orderId
     ) {
-        return ResponseEntity.ok(orderService.findById(orderId));
+        return ResponseEntity.ok(reservationService.findById(orderId));
     }
 	
 
@@ -48,13 +47,13 @@ public class OrderControlleur {
 	@DeleteMapping("/{id}")
 	public void deleteOne(@PathVariable Integer id)
 	{
-		orderService.deleteById(id);
+		reservationService.deleteById(id);
 		
 	}
 	@DeleteMapping
 	public void deleteAll()
 	{
-		orderService.deleteAll();
+		reservationService.deleteAll();
 		
 	}
 

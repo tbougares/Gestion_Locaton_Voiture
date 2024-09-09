@@ -81,7 +81,7 @@ public class CarDto {
     private PhotoDto photo;
 	@NotBlank
 	@NotEmpty
-    private List<OrderDto> orders;
+    private List<ReservationDto> orders;
     
     public static CarDto fromEntity(Car car) {
         if (car == null) {

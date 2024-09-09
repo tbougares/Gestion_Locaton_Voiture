@@ -1,4 +1,5 @@
 package Gestion_Locaton_Voiture.Entity;
+import java.time.LocalDate;
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -58,7 +59,7 @@ public class Client extends User {
 	
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Column(name = "DateCreation")
-	private Date date_Creation;
+	private LocalDate date_Creation;
 	
 	@Column(name = "email")
 	private String email;
