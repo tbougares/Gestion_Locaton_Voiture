@@ -20,7 +20,7 @@ public class EntreteinServiceImpl implements EntreteinService {
 	@Override
 	public List<Entretein> findAll() {
 		// TODO Auto-generated method stub
-		return null;
+		return entreteinRepository.findAll();
 	}
 
 	@Override
@@ -50,7 +50,13 @@ public class EntreteinServiceImpl implements EntreteinService {
 	@Override
 	public Entretein CreateOneEntretien(Entretein entretein) {
 		// TODO Auto-generated method stub
-		return null;
+		return entreteinRepository.save(entretein);
+	}
+
+	@Override
+	public List<Entretein> getEntretiensByCarMatricule(String matricule) {
+		// TODO Auto-generated method stub
+		return entreteinRepository.findEntretiensByCarMatricule(matricule);
 	}
 
 }

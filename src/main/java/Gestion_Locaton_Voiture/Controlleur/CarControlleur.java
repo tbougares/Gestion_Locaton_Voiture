@@ -17,11 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import Gestion_Locaton_Voiture.Entity.Car;
 import Gestion_Locaton_Voiture.Services.CarService;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
 
 
 

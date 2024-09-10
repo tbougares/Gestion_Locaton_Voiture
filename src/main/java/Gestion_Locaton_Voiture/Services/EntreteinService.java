@@ -15,5 +15,5 @@ public interface EntreteinService {
 	
 	public Entretein update(Entretein entretien ,Integer id);
 	public Entretein CreateOneEntretien (Entretein entretein);
-
+	public List<Entretein> getEntretiensByCarMatricule(String matricule);
 }

@@ -92,7 +92,7 @@ public class Car extends AbstractClasse {
 		@OneToMany(mappedBy = "car")
 	    private List<Reservation> orders;
 		@JsonBackReference
-		@OneToMany
+		@OneToMany(mappedBy = "voiture")
 	    private List<Entretein> entreteins;
 
 }
