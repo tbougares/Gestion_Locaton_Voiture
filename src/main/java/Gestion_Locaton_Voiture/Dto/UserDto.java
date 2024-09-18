@@ -3,6 +3,8 @@ package Gestion_Locaton_Voiture.Dto;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import Gestion_Locaton_Voiture.Entity.User;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
@@ -20,6 +22,7 @@ public class UserDto {
 	@NotEmpty
 	private Integer id;
 	@NotBlank
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@NotEmpty
     private Date last_CheckIn;
 	@NotBlank

@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import Gestion_Locaton_Voiture.Dto.ClientDto;
 import Gestion_Locaton_Voiture.Entity.Client;
 import Gestion_Locaton_Voiture.Services.ClientService;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -31,9 +31,8 @@ public class ClientController {
 
 	
 	
-	@GetMapping
-	@ApiOperation(value="GetAllClient" )
-	public ResponseEntity<List<Client>> getAllClient()
+	@GetMapping("GetAllClient" )
+	public ResponseEntity<List<ClientDto>> getAllClient()
 	{
 	return ResponseEntity.ok(clientService.findAll());	
 	}
@@ -48,7 +47,7 @@ public class ClientController {
 	
 	
 	@GetMapping("/CIN/{CIN}")
-    public ResponseEntity<Client> findByCIN(
+    public ResponseEntity<Optional<Client>> findByCIN(
             @RequestParam("CIN") String clientCIN
     ) {
         return ResponseEntity.ok(clientService.findByCIN(clientCIN));

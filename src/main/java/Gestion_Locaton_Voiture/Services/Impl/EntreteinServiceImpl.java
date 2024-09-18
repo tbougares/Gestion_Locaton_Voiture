@@ -5,9 +5,13 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import Gestion_Locaton_Voiture.Dto.EntreteinDto;
+import Gestion_Locaton_Voiture.Entity.Car;
 import Gestion_Locaton_Voiture.Entity.Entretein;
+import Gestion_Locaton_Voiture.Repository.CarRepository;
 import Gestion_Locaton_Voiture.Repository.EntreteinRepository;
 import Gestion_Locaton_Voiture.Services.EntreteinService;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -16,6 +20,9 @@ public class EntreteinServiceImpl implements EntreteinService {
 	
 	private final EntreteinRepository entreteinRepository;
 	
+	private final CarRepository carRepository;
+	
+	private  EntreteinDto entreteinDto;
 	 
 	@Override
 	public List<Entretein> findAll() {
@@ -48,15 +55,33 @@ public class EntreteinServiceImpl implements EntreteinService {
 	}
 
 	@Override
-	public Entretein CreateOneEntretien(Entretein entretein) {
+	public Entretein CreateOneEntretien(Integer IdCar ,EntreteinDto entretein) {
 		// TODO Auto-generated method stub
-		return entreteinRepository.save(entretein);
+		Car car= carRepository.findById(IdCar).orElseThrow();
+		
+		
+		Entretein entreteins = entreteinDto.toEntity(entretein);
+		car.getEntreteins().add(entreteins);
+		entreteins.setVoiture(car);
+		
+		carRepository.save(car);
+		return entreteinRepository.save(entreteins);
 	}
+	
 
 	@Override
 	public List<Entretein> getEntretiensByCarMatricule(String matricule) {
 		// TODO Auto-generated method stub
 		return entreteinRepository.findEntretiensByCarMatricule(matricule);
 	}
+	 public Entretein updateEntretien(Integer id, Entretein updatedEntretien) {
+	        return entreteinRepository.findById(id)
+	            .map(entretien -> {
+	                entretien.setKiliometrageDeVidange(updatedEntretien.getKiliometrageDeVidange());
+	                
+	                return entreteinRepository.save(entretien);
+	            })
+	            .orElseThrow(() -> new EntityNotFoundException("Entretien non trouvé"));
+	    }
 
 }

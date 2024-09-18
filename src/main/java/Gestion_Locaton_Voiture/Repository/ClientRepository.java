@@ -1,6 +1,7 @@
 package Gestion_Locaton_Voiture.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -12,7 +13,7 @@ import Gestion_Locaton_Voiture.Entity.Client;
 
 public interface ClientRepository extends JpaRepository<Client, Integer> {
 	
-	public Client  findByCIN(String CIN);
+	public Optional<Client>  findByCIN(String CIN);
 	@Query("SELECT c FROM Client c  WHERE c.firstName = ?1 ")
 			List<Client> findByFirstName(String firstName);
 	/*@Query(value = "SELECT * FROM Client u WHERE u.age = :startAge And u.age = :endAge ", 

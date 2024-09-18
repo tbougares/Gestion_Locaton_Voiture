@@ -19,13 +19,14 @@ import Gestion_Locaton_Voiture.Entity.Car;
 import Gestion_Locaton_Voiture.Services.CarService;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 
 
 
 
 @RestController
 @RequestMapping("/Cars")
-
+@RequiredArgsConstructor
 
 public class CarControlleur {
 
@@ -33,10 +34,7 @@ public class CarControlleur {
 	
 	private final CarService carService;
 	
-	public CarControlleur(CarService carService) {
-		super();
-		this.carService = carService;
-	}
+	
 
 	@GetMapping("/AllCars")
 	
@@ -46,7 +44,7 @@ public class CarControlleur {
 		//return ResponseEntity.ok("test");
 	}
 
-	@GetMapping("/matricuel/{Matricuel}")
+	@GetMapping("/matricuel/Matricuel")
 	public Optional<Car> getCarByMatricuel(
 			@RequestParam("Matricuel") String carMat)
 	{

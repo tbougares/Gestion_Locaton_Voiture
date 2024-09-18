@@ -3,6 +3,7 @@ package Gestion_Locaton_Voiture.Services;
 import java.util.List;
 import java.util.Optional;
 
+import Gestion_Locaton_Voiture.Dto.EntreteinDto;
 import Gestion_Locaton_Voiture.Entity.Entretein;
 
 public interface EntreteinService {
@@ -14,6 +15,6 @@ public interface EntreteinService {
 	public List<Entretein> findEntreteinBy(String firstsName);
 	
 	public Entretein update(Entretein entretien ,Integer id);
-	public Entretein CreateOneEntretien (Entretein entretein);
+	public Entretein CreateOneEntretien (Integer IdCar ,EntreteinDto entretein);
 	public List<Entretein> getEntretiensByCarMatricule(String matricule);
 }

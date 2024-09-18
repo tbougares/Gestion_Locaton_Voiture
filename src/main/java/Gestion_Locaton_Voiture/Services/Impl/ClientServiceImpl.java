@@ -2,9 +2,11 @@ package Gestion_Locaton_Voiture.Services.Impl;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
+import Gestion_Locaton_Voiture.Dto.ClientDto;
 import Gestion_Locaton_Voiture.Entity.Client;
 import Gestion_Locaton_Voiture.Repository.ClientRepository;
 import Gestion_Locaton_Voiture.Services.ClientService;
@@ -18,9 +20,11 @@ public class ClientServiceImpl implements ClientService {
 	
 	private final ClientRepository clientRepository;
 	@Override
-	public List<Client> findAll() {
+	public List<ClientDto> findAll() {
 		// TODO Auto-generated method stub
-		return clientRepository.findAll();
+		return clientRepository.findAll().stream()
+		        .map(ClientDto::fromEntity)
+		        .collect(Collectors.toList());
 	}
 
 	@Override
@@ -42,7 +46,7 @@ public class ClientServiceImpl implements ClientService {
 	}
 
 	@Override
-	public Client findByCIN(String CIN) {
+	public Optional<Client> findByCIN(String CIN) {
 		// TODO Auto-generated method stub
 		return clientRepository.findByCIN(CIN);
 	}

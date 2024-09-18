@@ -13,8 +13,9 @@ public interface ReservationRepository extends JpaRepository<Reservation, Intege
 	// Récupérer les réservations entre deux dates pour une voiture spécifique
     @Query("SELECT r FROM Reservation r WHERE r.car.id = :carId AND r.startDate <= :dateFin AND r.endDate >= :dateDebut ORDER BY r.startDate ASC")
     List<Reservation> findReservationsByVoitureAndDates(
-        @Param("carId") Integer voitureId,
+    		@Param("carId") Integer voitureId,
         @Param("dateDebut") LocalDate dateDebut,
         @Param("dateFin") LocalDate dateFin);
+
 
 }

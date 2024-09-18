@@ -2,6 +2,8 @@ package Gestion_Locaton_Voiture.Dto;
 
 import java.util.Date;
 
+import org.springframework.stereotype.Service;
+
 import Gestion_Locaton_Voiture.Entity.Reservation;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
@@ -12,6 +14,7 @@ import lombok.NoArgsConstructor;
 
 @Builder
 @Data
+@Service
 @AllArgsConstructor
 @NoArgsConstructor
 public class ReservationDto {
@@ -59,6 +62,7 @@ public class ReservationDto {
             //.endDate(order.getEndDate())
             //.OrderStatus(order.getOrderStatus())
           ///  .startDate(order.getStartDate())
+           // .car(CarDto.fromEntity(order.getCar()));
 
 
 

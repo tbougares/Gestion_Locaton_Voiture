@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import Gestion_Locaton_Voiture.Entity.Car;
 import Gestion_Locaton_Voiture.Entity.Reservation;
 import Gestion_Locaton_Voiture.Repository.CarRepository;
+import Gestion_Locaton_Voiture.Repository.EntreteinRepository;
 import Gestion_Locaton_Voiture.Repository.ReservationRepository;
 import Gestion_Locaton_Voiture.Services.CarService;
 import lombok.RequiredArgsConstructor;
@@ -25,6 +26,8 @@ public class CarServiceImpl implements CarService {
 	private final CarRepository carRepository;
 	
 	private final ReservationRepository ReservationRepository;
+	
+	private final EntreteinRepository entreteinRepository;
 
 	@Override
 	public List<Car> findAll() {
@@ -73,8 +76,9 @@ public class CarServiceImpl implements CarService {
 
 
 	@Override
-	public Car CreateOneCar(Car car) {
+	public Car CreateOneCar(Car car ) {
 		// TODO Auto-generated method stub
+		
 		return carRepository.save(car);
 	}
 

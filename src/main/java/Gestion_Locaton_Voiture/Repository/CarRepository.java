@@ -12,6 +12,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import Gestion_Locaton_Voiture.Entity.Car;
+import Gestion_Locaton_Voiture.Entity.Entretein;
 
 public interface CarRepository extends JpaRepository<Car, Integer> {
 
@@ -20,5 +21,6 @@ public interface CarRepository extends JpaRepository<Car, Integer> {
 	Page<List<Car>> findByModel(int model, Pageable pagebale);
 	@Query("SELECT v FROM Car v WHERE v.id NOT IN (SELECT r.car.id FROM Reservation r WHERE r.endDate >= :dateDebut AND r.startDate <= :dateFin)")
 	List<Car> findCarsDisponiblesEntreDates(@Param("dateDebut") LocalDate dateDebut, @Param("dateFin") LocalDate dateFin);
+	
 
 }

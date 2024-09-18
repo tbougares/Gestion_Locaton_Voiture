@@ -1,8 +1,10 @@
 package Gestion_Locaton_Voiture.Dto;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import Gestion_Locaton_Voiture.Entity.Car;
+import Gestion_Locaton_Voiture.Entity.Entretein;
 import Gestion_Locaton_Voiture.Entity.Fuel;
 import Gestion_Locaton_Voiture.Entity.GearBox;
 import jakarta.validation.constraints.NotBlank;
@@ -82,6 +84,8 @@ public class CarDto {
 	@NotBlank
 	@NotEmpty
     private List<ReservationDto> orders;
+	
+	private List<Entretein> entreteins;
     
     public static CarDto fromEntity(Car car) {
         if (car == null) {
@@ -107,6 +111,13 @@ public class CarDto {
             .price(car.getPrice())
             .gearBox(car.getGearBox())
             .rate(car.getRate())
+            .orders(
+            		car.getOrders() != null ?
+            				car.getOrders().stream()
+                            .map(ReservationDto::fromEntity)
+                            .collect(Collectors.toList()) : null)
+            
+           
             //.photo(car.getPhoto())
             //.(car.getModel())
             .build();
